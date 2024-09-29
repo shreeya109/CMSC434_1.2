@@ -1,0 +1,112 @@
+body {
+    width: 640px;
+    height: 960px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.app-container {
+    width: 640px;
+    height: 960px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-content {
+    padding: 20px;
+    height: 800px;
+    overflow-y: auto;
+    background-color: pink;
+}
+
+.tab-navigation {
+    display: flex;
+    justify-content: space-around;
+    background-color: navy;
+    color: yellow;
+    height: 80px;
+    align-items: center;
+}
+
+.tab-navigation button {
+    background-color: navy;
+    color: yellow;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab-navigation button img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.todo-list-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-input {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    max-width: 400px;
+}
+
+.todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.todo-list li.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.button-container {
+    display: flex; /* Use flexbox for button alignment */
+    align-items: center; /* Align buttons vertically */
+}
+
+.complete-btn, 
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.complete-btn i,
+.delete-btn i {
+    font-size: 16px; /* Adjust size as needed */
+    color: #007BFF; /* Change color for completed and delete icons */
+}
+
+.completed span {
+    text-decoration: line-through;
+    color: gray; /* Change color for completed tasks */
+}
