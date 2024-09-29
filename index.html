@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App</title>
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+        }
+
+        .app-container {
+            width: 690px;
+            height: 960px;
+            
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tab-content {
+            padding: 20px;
+            height: 800px; 
+            overflow-y: auto; 
+            background-color: pink;
+        }
+        
+
+       
+        .tab-navigation {
+            display: flex;
+            justify-content: space-around;
+            background-color: navy;
+            color: yellow;
+            height: 80px;
+            align-items: center;
+        }
+
+        .tab-navigation button {
+            background-color: navy;
+            color: yellow;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tab-navigation button img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="app-container">
+        
+        <div id="tab-content">
+           
+        </div>
+
+
+        <div class="tab-navigation">
+            <button onclick="switchTab('tab1')">
+                <img src="text-icon.png" alt="Text Icon">
+                Text
+            </button>
+            <button onclick="switchTab('tab5')">
+                <img src="colors-icon.png" alt="Colors Icon">
+                Colors
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        const tabContents = {
+            'tab1': `
+                <div class="tab-content">
+                    <h1>Text</h1>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    <p>Please note that this font size is too small to read easily on this device for many...</p>
+                    
+                </div>
+            `,
+            'tab5': `
+                <div class="tab-content" id="colors-tab">
+                    <h1>Colors</h1>
+                    <div class="line1" style="color:yellow; background-color:black; padding:10px; font-size:22px; font-weight:bold;">Hello There</div>
+                    <div class="line2" style="color:purple; background-color:yellow; padding:10px; font-size:22px; font-weight:bold;">Hi Again</div>
+                </div>
+            `
+        };
+        
+        function switchTab(tab) {
+            document.getElementById('tab-content').innerHTML = tabContents[tab];
+        }
+
+        switchTab('tab1');
+    </script>
+</body>
+</html>
