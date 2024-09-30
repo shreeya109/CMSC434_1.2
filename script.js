@@ -26,6 +26,22 @@ const tabContents = {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
         </div> `,
+    'tab2': `
+        <div class="tab-content">
+            <h1>Choices</h1>
+            <div>
+                <label>Hat color #1:</label><br>
+                <input type="radio" id="red" name="hatColor1" value="Red" checked> Red<br>
+                <input type="radio" id="blue" name="hatColor1" value="Blue"> Blue<br><br>
+                <label for="hatColor2">Hat color #2:</label><br>
+                <select id="hatColor2">
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                </select><br><br>
+                <button onclick="displayHatChoice()">Print something based on above choices...</button>
+                <div id="result"></div>
+            </div>
+        </div>`,
     'tab3': `
         <div class="tab-content">
             <h1>ToDo List</h1>
@@ -33,6 +49,19 @@ const tabContents = {
                 <input type="text" id="todo-input" class="todo-input" placeholder="Add a new task..." />
                 <button id="add-btn">Add Task</button>
                 <ul id="todo-list" class="todo-list"></ul>
+            </div>
+        </div>
+    `,
+    'tab4': `
+        <div class="tab-content">
+            <h1>Profile</h1>
+            <div class="profile-content">
+                <img src="assets/smiley-face.png" alt="Profile Image" id="profile-image">
+                <div class="profile-name">Smiley J. Smile</div>
+                <div class="notification" id="notification">
+                    <strong>Warning!</strong> Do not click on the profile image.
+                    <span class="close-notification" id="close-notification">&times;</span>
+                </div>
             </div>
         </div>
     `,
@@ -54,6 +83,31 @@ const tabContents = {
 function switchTab(tab) {
     document.getElementById('tab-content').innerHTML = tabContents[tab];
     if (tab === 'tab3') initializeToDo();
+    if (tab === 'tab4') initializeProfile();
+}
+
+
+function initializeProfile() {
+    const profileImage = document.getElementById('profile-image');
+    const notification = document.getElementById('notification');
+    const closeNotification = document.getElementById('close-notification');
+
+    notification.style.display = 'none'; 
+
+    profileImage.addEventListener('click', function () {
+        notification.style.display = 'block'; 
+    });
+
+    closeNotification.addEventListener('click', function () {
+        notification.style.display = 'none'; 
+    });
+}
+
+function displayHatChoice() {
+    const hatColor1 = document.querySelector('input[name="hatColor1"]:checked').value;
+    const hatColor2 = document.getElementById('hatColor2').value;
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `<p>You chose Hat color #1: ${hatColor1} and Hat color #2: ${hatColor2}</p>`;
 }
 
 function initializeToDo() {
@@ -70,20 +124,20 @@ function initializeToDo() {
         taskSpan.textContent = taskText;
 
         const completeBtn = document.createElement('button');
-        completeBtn.className = 'complete-btn'; // Add class for styling
+        completeBtn.className = 'complete-btn'; 
         completeBtn.innerHTML = '<img src="assets/checked.png" alt="Complete" style="width: 20px; height: 20px;">';
 
         const deleteBtn = document.createElement('button');
-        deleteBtn.className = 'delete-btn'; // Add class for styling
+        deleteBtn.className = 'delete-btn'; 
         deleteBtn.innerHTML = '<img src="assets/delete-symbol-option.png" alt="Delete" style="width: 20px; height: 20px;">'; 
 
         const buttonContainer = document.createElement('div');
-        buttonContainer.className = 'button-container'; // Create a container for the buttons
+        buttonContainer.className = 'button-container';
         buttonContainer.appendChild(completeBtn);
         buttonContainer.appendChild(deleteBtn);
 
         li.appendChild(taskSpan);
-        li.appendChild(buttonContainer); // Append button container instead of buttons directly
+        li.appendChild(buttonContainer);
         todoList.appendChild(li);
 
         todoInput.value = '';
