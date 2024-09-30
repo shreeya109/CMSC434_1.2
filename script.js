@@ -42,6 +42,12 @@ const tabContents = {
             <div class="line1" style="color:yellow; background-color:black; padding:10px; font-size:22px; font-weight:bold;">Hello There</div>
             <div class="line2" style="color:purple; background-color:yellow; padding:10px; font-size:22px; font-weight:bold;">Hi Again</div>
         </div>
+    `,
+    'tab6': `
+        <div class="tab-content">
+            <h1>Lower Right</h1>
+            <div class="lower-right-content">Down Here</div>
+        </div>
     `
 };
 
