@@ -152,5 +152,4 @@ function initializeToDo() {
     });
 }
 
-// Switch to the first tab by default
 switchTab('tab1');

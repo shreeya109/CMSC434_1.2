@@ -1,3 +1,4 @@
+
 body {
     width: 640px;
     height: 960px;
@@ -96,4 +97,33 @@ body {
     right: 10px;
     font-size: 18px;
     color: black;
+}
+
+.todo-list {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.todo-list li {
+    background-color: white; 
+    height: 20px;
+    font-size: 13px;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.todo-list li.completed span {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
 }
